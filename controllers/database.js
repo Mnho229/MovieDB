@@ -3,10 +3,10 @@ var RSVP = require('rsvp'); //Allows use of Promise syntax
 
 //Makes connection with the mysql database
 var connection = mysql.createConnection({
-    host : 'delphi.cs.uky.edu',
-    user : 'mnho229',
-    password : 'u0892688',
-    database : 'mnho229'
+    host : '*',
+    user : '*',
+    password : '*',
+    database : '*'
 });
 
 //Every function within this object is readable by other files that has the database.js file required
