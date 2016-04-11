@@ -1,0 +1,61 @@
+//- components/footer.jade
+//- Selects a layout for the bottom part of the page based on what page the user is on (mixin footerType)
+//- Each layout contains sorting keywords, a paragraph element, or a selection of forms the user can choose
+mixin footerType(type)
+    if (type == "index")
+        p This is the index page!
+    if (type == "actors")
+        div.row
+            div.columns.small-3
+                p SORT BY
+            div.columns.small-3
+                a#actorYear
+                    div
+                        p Year
+            div.columns.small-3
+                a#actorGenre
+                    div
+                        p Genre
+            div.columns.small-3
+                a#actorRating
+                    div
+                        p Film Rating
+    if (type == "movies")
+        div.row
+            div.columns.small-3
+                p SORT BY
+            div.columns.small-3
+                a#movieYear
+                    div
+                        p Year
+            div.columns.small-3
+                a#movieGenre
+                    div
+                        p Genre
+            div.columns.small-3
+                a#movieRating
+                    div
+                        p Film Rating
+    if (type == "releases")
+        p This is the Releases page!
+    if (type == "amd")
+        div.row
+            div.columns.small-3(style="padding-left:40px;")
+                a#footActor.footSelect
+                    div.row Add/Update Actor
+                a#footRole.footSelect
+                    div.row Add/Update Role
+            div.columns.small-3
+                a#footMovie.footSelect
+                    div.row Add/Update Movie
+            div.columns.small-3
+                a#footGenre.footSelect
+                    div.row Add/Update Genre
+            div.columns.small-3
+                a#footRelease.footSelect
+                    div.row Add Release
+                    div.row Update Release
+                    div.row Delete Release
+footer
+    div.row.footerParent
+        +footerType(page)

@@ -1,0 +1,15 @@
+html
+    head
+        title Releases
+        link(rel="stylesheet", href="/static/css/general.css")
+        - var page = "releases"
+    body
+        include components/header.jade
+        //- Releases report page
+        p Releases, ordered by date Released
+        div.construct
+        include components/footer.jade
+    script(src='/static/js/vendor/jquery-2.1.4.min.js')
+    script(src='/static/js/releases.js')
+
+

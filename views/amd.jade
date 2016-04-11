@@ -1,0 +1,174 @@
+html
+    head
+        title Add/Update/Delete
+        link(rel="stylesheet", href="/static/css/general.css")
+        link(rel="stylesheet", href="/static/css/amd.css")
+        - var page = "amd"
+    body
+        include components/header.jade
+        p Add/Update/Delete (Entire process is CASE-SENSITIVE) (Assume every field is required unless said otherwise)
+        div.construct
+            //- Users input details into a form to insert/update/delete in the MovieDB
+            //- Actors custom form
+            div.hidden.dataInput.actor
+                p Actors
+                label Add
+                    input(type="radio" name="actorSelect" value="Add" checked)
+                label Update
+                    input(type="radio" name="actorSelect" value="Update")
+                p
+                    label First Name:
+                        input(name="fname", maxlength=50)
+                p
+                    label Last Name:
+                        input(name="lname", maxlength=50)
+                p
+                    label Year of Birth:
+                        input(name="yob", maxlength=4)
+                    label Optional for Add/Not needed for Updating
+                p
+                    label Gender(M/F)
+                        input(name="gender", maxlength=1)
+                    label Optional for Add/Not needed for Updating
+                p Ignore textboxes below if not updating
+                p
+                    label Actor info to change(Type fname, lname, yob, or gender)
+                        input(name="actor-attribute", maxlength=6)
+                p
+                    label New Info
+                        input(name="actor-update", maxlength=50)
+                a
+                    div#auActor.submit Submit
+                span#serverResponseActor
+
+            //-Roles custom form
+            div.hidden.dataInput.role
+                p Roles
+                label Add
+                    input(type="radio" name="roleSelect" value="Add" checked)
+                label Update
+                    input(type="radio" name="roleSelect" value="Update")
+                p
+                    label First Name:
+                        input(name="fnameR", maxlength=50)
+                p
+                    label Last Name:
+                        input(name="lnameR", maxlength=50)
+                p
+                    label Movie Title:
+                        input(name="titleR", maxlength=100)
+                p
+                    label Year:
+                        input(name="yearR", maxlength=4)
+                p
+                    label Role:
+                        input(name="role", maxlength=100)
+                p Ignore textboxes below if not updating
+                p
+                    label Actor info to change(Type actor, movie, or role)
+                        input(name="role-attribute", maxlength=6)
+                p
+                    label New Year (Movie Only)
+                        input(name="role-new-year", maxlength=4)
+                p
+                    label New Actor/Movie/Role
+                        input(name="role-update", maxlength=100)
+                a
+                    div#auRole.submit Submit
+                span#serverResponseRole
+
+            //-Movies custom form
+            div.hidden.dataInput.movie
+                p Movies
+                label Add
+                    input(type="radio" name="movieSelect" value="Add" checked)
+                label Update
+                    input(type="radio" name="movieSelect" value="Update")
+                p
+                    label Movie title:
+                        input(name="title", maxlength=100)
+                p
+                    label Year:
+                        input(name="yearM", maxlength=4)
+                p
+                    label Genre:
+                        input(name="nameM", maxlength=30)
+                    label Not needed for Updating
+                p
+                    label Rating:
+                        input(name="rating", maxlength=6)
+                    label Not needed for Updating
+                p Ignore textboxes below if not updating
+                p
+                    label Movie info to change(Type title, year, genre, or rating)
+                        input(name="movie-attribute", maxlength=6)
+                p
+                    label New Info
+                        input(name="movie-update", maxlength=100)
+                a
+                    div#auMovie.submit Submit
+                span#serverResponseMovie
+
+            //-Genres custom form
+            div.hidden.dataInput.genre
+                p Genres
+                label Add
+                    input(type="radio" name="genreSelect" value="Add" checked)
+                label Update
+                    input(type="radio" name="genreSelect" value="Update")
+                p
+                    label Name:
+                        input(name="genre", maxlength=30)
+                
+                p Ignore textbox below if not updating
+                p
+                    label New Genre name
+                        input(name="genre-update", maxlength=30)
+                
+                a
+                    div#auGenre.submit Submit
+                span#serverResponseGenre
+
+            //-Releases custom form
+            div.hidden.dataInput.release
+                p Releases
+                label Add
+                    input(type="radio" name="releaseSelect" value="Add" checked)
+                label Update
+                    input(type="radio" name="releaseSelect" value="Update")
+                label Delete
+                    input(type="radio" name="releaseSelect" value="Delete")
+                p
+                    label Movie Title
+                        input(name="titleRe", maxlength=100)
+                p
+                    label Year First Released
+                        input(name="yearRe", maxlength=4)
+                    label (Usually the Theatrical Release)
+                p
+                    label Medium
+                        input(name="mediumRe", maxlength=50)
+                    label (Blu-Ray, Digital, Direct-to-Tv, DVD, Theatrical)
+                p
+                    label Date
+                        input(name="dateRe", maxlength=20)
+                    label (Type in this format: YYYY-MM-DD / Other formats not guaranteed to have correct date)
+                p Ignore textboxes below if not updating
+                p
+                    label Release info to change(Type title, medium, or date)
+                        input(name="release-attribute", maxlength=6)
+                p
+                    label New Year First Released(title only)
+                        input(name="new-release-year")
+                p
+                    label New Info
+                        input(name="release-update", maxlength=100)
+                a
+                    div#auRelease.submit Submit
+                span#serverResponseRelease
+
+        include components/footer.jade
+    script(src='/static/js/vendor/jquery-2.1.4.min.js')
+    script(src='/static/js/components/footer.js')
+    script(src='/static/js/amd.js')
+

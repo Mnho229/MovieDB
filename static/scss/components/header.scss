@@ -1,0 +1,14 @@
+.headerParent {
+    color: white;
+    background-color: black;
+    width: 100%;
+    max-width: 100%;
+
+    .columns {
+        border-left: solid 2px red;
+    }
+}
+
+a {
+    text-decoration: none;
+}

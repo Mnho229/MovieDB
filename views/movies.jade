@@ -1,0 +1,14 @@
+html
+    head
+        title Movies
+        link(rel="stylesheet", href="/static/css/general.css")
+        - var page = "movies"
+    body
+        include components/header.jade
+        //- Movies Reports page
+        p Movies
+        div.construct
+        include components/footer.jade
+    script(src='/static/js/vendor/jquery-2.1.4.min.js')
+    script(src='/static/js/components/footer.js')
+

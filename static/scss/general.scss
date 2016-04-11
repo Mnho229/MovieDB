@@ -1,0 +1,14 @@
+@import "vendor/foundation";
+
+* {
+    box-sizing: border-box;
+}
+
+.construct {
+    height: 560px;
+    overflow-y: scroll;
+    padding-left:3px;
+}
+
+@import "components/header";
+@import "components/footer"

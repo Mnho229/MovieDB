@@ -1,0 +1,16 @@
+html
+    head
+        title Test page
+        link(rel="stylesheet", href="/static/css/general.css")
+        - var page = "index"
+    body
+        include components/header.jade
+        div.construct
+            h2 Welcome to MovieDB!
+            p Click on any of the above links at the top to navigate through the website
+            br
+            p In all pages except the releases page, the bottom part will have buttons to sort any of the reports
+            p along with navigating through the add/update/remove section
+        include components/footer.jade
+
+
